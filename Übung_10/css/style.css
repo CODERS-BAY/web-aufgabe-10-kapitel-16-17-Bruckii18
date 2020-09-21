@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&family=Lobster&display=swap');
+
+body {
+    margin: auto;
+    margin-top: 2rem;
+    max-width: 80rem;
+    background-image: url(../img/beach-background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Acme', sans-serif;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 8fr;
+}
+.kopf {
+    grid-column: 1 / 9;
+    grid-row: 1 / 2;
+    background-image: url(../img/traumstrand-haengematte-urlaub-palmen-boot-meer.jpeg);
+    border-radius: 2rem 2rem 0 0;
+    border: 2px solid white;
+    max-height: 20rem;
+    width: 100%;
+}
+.kopf h1 {
+    color: white;
+    text-align: center;
+    font-family: 'Lobster', cursive;
+    font-weight: bold;
+    font-size: 50px;
+}
+header a {
+    text-decoration: none;
+}
+.navbar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    background-color: rgba(104, 104, 104, 0.5);
+}
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    
+}
+.navbar li {
+    font-size: 30px;
+    transform: rotate(90deg);
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+}
+.inhalt {
+    grid-column: 2 / 9;
+    grid-row: 2 / 3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgba(255, 255, 255, 0.521);
+}
+
+.inhalt a {
+    text-decoration: none;
+    color: black;
+}
+.inhalt div:hover {
+    background-color: rgba(95, 95, 95, 0.5);
+}
+.inhalt div {
+    padding: 1rem;
+}
+.inhalt div img {
+    width: 100%;
+    border-radius: 1rem;
+}
+.inhalt p {
+    font-size: 20px;
+}
+.fuss {
+    grid-column: 1 / 9;
+    grid-row: 3 / 4;
+    padding: 3rem;
+    background-color: rgb(95, 95, 95);
+    border-radius: 0 0 1rem 1rem;
+    text-align: center;
+    font-size: 15px;
+}
+
+/* Infoseite Flex-container */
+.flex-container {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    background-color: rgba(255, 255, 255, 0.521);
+}
+.flex-item {
+    padding: 1rem;
+}
+.flex-item div {
+    max-width: 30rem;
+    display: block;
+    margin: auto;
+}
+.flex-item img {
+    max-width: 30rem;
+}
+
+
+@media screen and (max-width: 650px) {
+    .flex-item img {
+        width: 95%;
+        display: block;
+        margin: auto;
+    }
+    .flex-item p {
+        width: 95%;
+        text-align: center;
+    }
+    .flex-item h2 {
+        text-align: center;
+    }
+    .inhalt {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media screen and (min-width: 1300px) {
+    body {
+        max-width: 120rem;
+    }
+    .inhalt {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media print {
+    nav {
+        display: none;
+    }
+    img {
+        display: none;
+    }
+    a[href]::after {
+        content: " [" attr(href "]");
+    }
+    .kopf {
+        background-image: none;
+    }
+    body {
+        background-image: none;
+        display: block;
+    }
+    .kopf h1 {
+        color: black;
+    }
+    .inhalt {
+        grid-column: 1 / 9;
+    }
+}
